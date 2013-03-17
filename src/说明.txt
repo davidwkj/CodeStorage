@@ -1,0 +1,63 @@
+外挂说明
+
+   1. 外挂开源，大家可以随便修改，都为文本，绝对不会获取你任何密码~
+   2. 外挂的目：给所有泡泡鱼玩家绝对的公平，让那些收费外挂去死吧，我们需要公平的环境，要用挂大家都用挂。
+   3. 希望GM早日把外挂都封了，还大家公平的游戏环境。
+   4. 泡泡鱼也是Python开发的，外挂也是Python开发的，希望有更多朋友加入到Python中来。http://python.org 
+
+忠实泡泡鱼粉丝期望
+
+   1. 泡泡鱼团队多找点*牛人*，彻底的封杀外挂
+   2. 泡泡鱼的美工是越来越差，鱼做的是越来越难看[对比丽丽和熊猫以及骨骨的Flash源代码]
+   3. 泡泡鱼的GM业务需要完善
+   4. 最后希望泡泡鱼早日给我们清静公平的环境，还我们原来的泡泡鱼 
+
+更新
+
+10.5 添加了过滤功能，可以过滤不需要的鱼。
+10.5 添加了自定义钓鱼时间功能，可以自定义每轮钓鱼时间。
+
+如何使用
+
+   1. 安装Python 2.6 For Windows http://python.org/ftp/python/2.6.3/python-2.6.3.msi
+   2. 下载外挂包 http://paopaoyu.googlecode.com/files/paopaoyu.zip
+   3. 修改test.py里的账号和密码，默认抓雌性，如果抓杜牧，把2替换为3即可。
+   4. 运行"open.cmd" 输入“test.py”即可 
+
+抓鱼需要5-10分钟左右，所以登陆成功后，需要10分钟才会显示第一轮，大家把那个挂那里就可以了。
+比如账号为：test 密码为test123
+需要抓雌性100次则把test.py修改为 fishman1=CatchFish("test","test123",2,100)
+需要抓杜牧1000次，则可以修改为 fishman1=CatchFish("test","test123",3,1000)
+
+更新后说明
+****过滤鱼功能
+修改fishlist里的鱼，比如需要抓紫丽丽和黄丽丽和所有的大宝鱼，其他的鱼都不要。
+fishlist=[u’紫丽丽',u'黄丽丽',u'大宝']
+说明fishlist为Python里的列表，u'紫丽丽'表示utf-8编码的问题
+
+***自定义钓鱼时间
+设置time=40时间即可，注意不要低于这个时间，否则。。。。
+
+新的test.py举例如下：
+    fishlist=[u'丽丽',u'紫骨骨',u'大宝',u'朋克',u'鲤鱼',u'火箭']
+    fishman1=CatchFish("test","test123",2,10,time=40,fishlist=fishlist)
+
+视频教程：http://paopaoyu.googlecode.com/files/paopaoyu-video.rar
+Help
+
+   1. 如何开多个账号? 
+
+    复制test.py，修改里面的账号和密码，运行即可。 
+
+   1. 外挂会盗取我账号吗? 
+
+    外挂源代码开放，您可以找会Pyhton的人检查，绝对不会盗取你密码。 
+
+文件说明：
+
+pyamf文件夹：   解析amf的Python包
+cookie.py       登陆人人网，获取Cookie
+fish.py         外挂核心文件
+test.py         设置用户账号及密码
+open.cmd        方便运行外挂的命令提示符
+BeautifulSoup.py解析网页的Python包
